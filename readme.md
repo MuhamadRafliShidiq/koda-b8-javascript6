@@ -4,7 +4,7 @@
 
 Memanfaatkan Promise dan setTimeout dan menggunakan sintaks chaining then-catch dan async-await
 
-## Cara berjalan Program nya
+## Cara berjalan Program dengan Chaining Then-Catch
 
 ### 1. Inisialisasi Fungsi Queue dengan `queue(time, name)`
 
@@ -34,3 +34,6 @@ Setiap blok `.then` harus mengembalikan/ return fungsi `queue()` yang baru agar 
 
 Jika salah satu fungsi `queue` di dalam rantai mengalami eror (misalnya, parameter `time` diisi dengan huruf), eksekusi `.then()` di bawahnya akan langsung dihentikan. Program akan langsung melompat ke blok `.catch()` di paling bawah untuk
 menampilkan pesan kesalahan ke konsol dengan format: `Error : [Pesan Eror]`.
+
+
+## Cara berjalan Program dengan Async - Await
