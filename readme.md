@@ -36,4 +36,9 @@ Jika salah satu fungsi `queue` di dalam rantai mengalami eror (misalnya, paramet
 menampilkan pesan kesalahan ke konsol dengan format: `Error : [Pesan Eror]`.
 
 
-## Cara berjalan Program dengan Async - Await
+Untuk cara kerja program ini sama saja dari proses 1 sampai 3, cuma berbeda dibagian Eksekusi nya saja untuk Async - Await ini.
+
+### 4. Deklarasi Fungsi `async function main()`
+Dengan penggunaan `async` ini merupakan sintak untuk fungsi untuk proses asinkron yang menggunakan `await` yang akan otomatis mengembalikan sebuah Promise.
+
+### 5. 
