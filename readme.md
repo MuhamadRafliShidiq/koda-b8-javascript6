@@ -43,4 +43,37 @@ Untuk cara kerja program ini sama saja dari proses 1 sampai 3, cuma berbeda diba
 ### 4. Deklarasi Fungsi `async function main()`
 Dengan penggunaan `async` ini merupakan sintak untuk fungsi untuk proses asinkron yang menggunakan `await` yang akan otomatis mengembalikan sebuah Promise.
 
-### 5. 
+### 5. Penanganan Batal Antrian (`Catch`)
+
+Jika salah satu fungsi `queue` di dalam rantai mengalami eror (misalnya, parameter `time` diisi dengan huruf), eksekusi `.then()` di bawahnya akan langsung dihentikan. Program akan langsung melompat ke blok `.catch()` di paling bawah untuk
+menampilkan pesan kesalahan ke konsol dengan format: `Error : [Pesan Eror]`.
+
+## Cara berjalan Program dengan Async - Await
+
+Untuk cara kerja program ini sama saja dari proses 1 sampai 3, cuma berbeda dibagian Eksekusi nya saja untuk Async - Await ini.
+
+### 4. Deklarasi Fungsi `async function main()`
+
+Dengan penggunaan `async` ini merupakan sintak untuk fungsi untuk proses asinkron yang menggunakan `await` yang akan otomatis mengembalikan sebuah Promise.
+
+### 5. Proses Antrian (`await`)
+
+Di dalam fungsi `main`, program memanggil fungsi `queue()` (yang mengembalikan Promise) dengan menggunakan `await`.
+
+- `await queue(3, "John")` maka Program akan menghentikan sementara eksekusi baris kode di bawahnya hingga fungsi `queue` selesai diproses (dalam kasus ini, menunggu selama 1500ms). Setelah selesai, hasil resolve (nama `"John"`) langsung
+  disimpan ke dalam variabel `name1` dan dicetak ke konsol.
+- Eksekusi Berurutan, Setelah `John` selesai, baris berikutnya baru berjalan. Program beralih menunggu `Ed` (`queue(4, "Ed")` (menunggu selama 2000ms)), lalu mencetaknya, baru kemudian beralih menunggu `Jane` (`queue(1, "Jane")` (menunggu
+  selama 500ms)). Berbeda dengan versi `.then()`, sintaks `await` mengeliminasi kebutuhan struktur kode yang menjorok ke dalam (callback hell).
+
+### 6. Penanganan Error Menggunakan Blok `try...catch`
+
+Seluruh proses antrian di dalam fungsi dibungkus oleh blok `try`.
+
+- Blok `try`: Digunakan untuk menguji jalannya antrian dalam kondisi normal.
+- Blok `catch (errorMsg)`: Jika salah satu fungsi `queue` di dalam blok `try` mengalami kegagalan atau ditolak `rejected`, JavaScript akan langsung menghentikan sisa antrian secara otomatis. Alur program langsung melompat ke blok `catch`
+  untuk menangkap pesan kesalahan dan mencetaknya ke konsol dengan format: `Error : [Pesan Eror]`.
+
+### 7. Eksekusi Program `main()`
+
+Pada baris paling akhir, fungsi `main()` dipanggil untuk menjalankan proses antrian di atas.
+
