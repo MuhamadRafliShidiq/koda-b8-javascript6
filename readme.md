@@ -35,7 +35,9 @@ Setiap blok `.then` harus mengembalikan/ return fungsi `queue()` yang baru agar 
 Jika salah satu fungsi `queue` di dalam rantai mengalami eror (misalnya, parameter `time` diisi dengan huruf), eksekusi `.then()` di bawahnya akan langsung dihentikan. Program akan langsung melompat ke blok `.catch()` di paling bawah untuk
 menampilkan pesan kesalahan ke konsol dengan format: `Error : [Pesan Eror]`.
 
+============================================================================================================================================================================================
 
+## Cara berjalan Program dengan Async - Await
 Untuk cara kerja program ini sama saja dari proses 1 sampai 3, cuma berbeda dibagian Eksekusi nya saja untuk Async - Await ini.
 
 ### 4. Deklarasi Fungsi `async function main()`
