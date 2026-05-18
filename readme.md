@@ -37,7 +37,7 @@ menampilkan pesan kesalahan ke konsol dengan format: `Error : [Pesan Eror]`.
 
 ============================================================================================================================================================================================
 
-## Cara berjalan Program dengan Async - Await
+## Cara Kerja Program dengan Async - Await
 Untuk cara kerja program ini sama saja dari proses 1 sampai 3, cuma berbeda dibagian Eksekusi nya saja untuk Async - Await ini.
 
 ### 4. Deklarasi Fungsi `async function main()`
